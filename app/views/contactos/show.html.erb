@@ -1,0 +1,11 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @contacto.title %>
+</p>
+
+<p>
+  <strong>Correo:</strong>
+  <%= @contacto.text %>
+</p>
+<%= link_to 'Editar', edit_contacto_path(@contacto) %> |
+<%= link_to 'Regresar', contactos_path %>

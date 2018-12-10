@@ -1,0 +1,22 @@
+<h1>Lista de Contactos</h1>
+<%= link_to 'Nuevo contacto', new_contacto_path %>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @contactos.each do |contacto| %>
+    <tr>
+      <td><%= contacto.title %></td>
+      <td><%= contacto.text %></td>
+      <td><%= link_to 'Ver Registro', contacto_path(contacto) %></td>
+      <td><%= link_to 'Editar', edit_contacto_path(contacto) %></td>
+      <td><%= link_to 'Eliminar', contacto_path(contacto),
+              method: :delete,
+              data: { confirm: 'Está seguro que sea eliminarlo?' } %></td>
+    </tr>
+  <% end %>
+</table>
